@@ -20,7 +20,132 @@
       "price": "800",
       "category": "laptop",
       "rating": "5"
+    },
+    {
+      "id": "71f1",
+      "name": "Iphone 15 promax",
+      "price": "800",
+      "category": "phone",
+      "rating": "5"
+    },
+    {
+      "id": "165f",
+      "name": "iPhone 14 promax",
+      "price": "500",
+      "category": "phone",
+      "rating": "4.5"
+    },
+    {
+      "id": "176a",
+      "name": "Dell Latitude 5670",
+      "price": "350",
+      "category": "Laptop",
+      "rating": "4"
+    },
+    {
+      "id": "a08c",
+      "name": "Asus Strix Scar G17",
+      "price": "2000",
+      "category": "Gaming Laptop",
+      "rating": "5.0"
     }
   ],
-  "sales": []
+  "sales": [
+    {
+      "id": "0380",
+      "customerName": "Min Zar Ni Htut",
+      "address": "maesot",
+      "products": [
+        {
+          "id": "69ed",
+          "name": "Redmi 10A",
+          "price": "450",
+          "category": "android",
+          "rating": "4.5",
+          "quantity": 2
+        },
+        {
+          "id": "0eb9",
+          "name": "Redmi 9A",
+          "price": "200",
+          "category": "android",
+          "rating": "4.0",
+          "quantity": 2
+        },
+        {
+          "id": "16eb",
+          "name": "Macbook pro",
+          "price": "800",
+          "category": "laptop",
+          "rating": "5",
+          "quantity": 1
+        }
+      ],
+      "totalNet": 2100
+    },
+    {
+      "id": "98ba",
+      "customerName": "Hlyan Min Aung",
+      "address": "maesot",
+      "products": [
+        {
+          "id": "69ed",
+          "name": "Redmi 10A",
+          "price": "450",
+          "category": "android",
+          "rating": "4.5",
+          "quantity": 2
+        },
+        {
+          "id": "0eb9",
+          "name": "Redmi 9A",
+          "price": "200",
+          "category": "android",
+          "rating": "4.0",
+          "quantity": 2
+        },
+        {
+          "id": "16eb",
+          "name": "Macbook pro",
+          "price": "800",
+          "category": "laptop",
+          "rating": "5",
+          "quantity": 1
+        },
+        {
+          "id": "71f1",
+          "name": "Iphone 15 promax",
+          "price": "800",
+          "category": "phone",
+          "rating": "5",
+          "quantity": 3
+        },
+        {
+          "id": "165f",
+          "name": "iPhone 14 promax",
+          "price": "500",
+          "category": "phone",
+          "rating": "4.5",
+          "quantity": 2
+        },
+        {
+          "id": "a08c",
+          "name": "Asus Strix Scar G17",
+          "price": "2000",
+          "category": "Gaming Laptop",
+          "rating": "5.0",
+          "quantity": 2
+        },
+        {
+          "id": "176a",
+          "name": "Dell Latitude 5670",
+          "price": "350",
+          "category": "Laptop",
+          "rating": "4",
+          "quantity": 1
+        }
+      ],
+      "totalNet": 9850
+    }
+  ]
 }

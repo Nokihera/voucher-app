@@ -38,18 +38,18 @@ const ProductPage = () => {
   };
 
   // Fetch sales products
-  useEffect(() => {
-    const fetchSaleProducts = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/sales");
-        const data = await res.json();
-        setSalesProducts(data);
-      } catch (err) {
-        alert(err.message);
-      }
-    };
-    fetchSaleProducts();
-  }, []);
+//   useEffect(() => {
+//     const fetchSaleProducts = async () => {
+//       try {
+//         const res = await fetch("http://localhost:3000/sales");
+//         const data = await res.json();
+//         setSalesProducts(data);
+//       } catch (err) {
+//         alert(err.message);
+//       }
+//     };
+//     fetchSaleProducts();
+//   }, []);
 
   // Add or update product in sales
   const addBtnClick = async (id) => {
@@ -118,8 +118,8 @@ const ProductPage = () => {
           <div className="px-7 flex justify-between mt-7 mx-20">
             <input
               type="search"
-              className="px-3 py-2 bg-gray-300 rounded-lg"
-              placeholder="Search"
+              className="px-3 py-2 bg-gray-200 border-[1px] border-gray-400 outline-none focus:border-gray-600 rounded-lg"
+              placeholder={`Search...`}
             />
             <button
               className="bg-blue-500 text-white px-3 py-2 rounded-lg flex items-center gap-1"
@@ -211,7 +211,7 @@ const ProductPage = () => {
               </div>
             </div>
           </div>
-          <div className="px-7 flex flex-col items-center mx-20 py-4">
+          <div className="px-7 flex flex-col items-center mx-20 py-4 shadow-lg min-h-[300px]">
             <table className="w-full">
               <thead>
                 <tr>
@@ -230,15 +230,15 @@ const ProductPage = () => {
                   <td className="text-right font-bold text-gray-800 text-lg">
                     Rating
                   </td>
-                  <td className="text-right font-bold text-gray-800 text-lg">
+                  {/* <td className="text-right font-bold text-gray-800 text-lg">
                     Action
-                  </td>
+                  </td> */}
                 </tr>
               </thead>
               <tbody>
-                {products.map((product) => (
+                {products.map((product, index) => (
                   <tr key={product.id}>
-                    <td className="text-left text-gray-600">{product.id}</td>
+                    <td className="text-left text-gray-600">{index + 1}</td>
                     <td className="text-left text-gray-700 font-semibold">
                       {product.name}
                     </td>
@@ -251,7 +251,7 @@ const ProductPage = () => {
                     <td className="text-right text-gray-600">
                       {product.rating}
                     </td>
-                    <td className="text-right">
+                    {/* <td className="text-right">
                       <button
                         className="bg-slate-800 rounded-md px-[3px] py-[3px] text-white"
                         onClick={() => addBtnClick(product.id)}
@@ -260,7 +260,7 @@ const ProductPage = () => {
                           <FaPlus />
                         </span>
                       </button>
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>
