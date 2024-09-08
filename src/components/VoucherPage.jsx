@@ -1,8 +1,11 @@
 import React from 'react'
+import BreadCrumb from './BreadCrumb'
 
 const VoucherPage = () => {
   return (
-    <div>VoucherPage</div>
+    <div>
+        <BreadCrumb title={"Vouchers"} />
+    </div>
   )
 }
 
