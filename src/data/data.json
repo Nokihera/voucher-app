@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "id": "69ed",
+      "name": "Redmi 10A",
+      "price": "450",
+      "category": "android",
+      "rating": "4.5"
+    },
+    {
+      "id": "0eb9",
+      "name": "Redmi 9A",
+      "price": "200",
+      "category": "android",
+      "rating": "4.0"
+    },
+    {
+      "id": "16eb",
+      "name": "Macbook pro",
+      "price": "800",
+      "category": "laptop",
+      "rating": "5"
+    }
+  ],
+  "sales": []
+}
