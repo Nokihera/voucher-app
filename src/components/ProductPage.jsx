@@ -4,14 +4,47 @@ import { FaPlus } from "react-icons/fa";
 import Preloader from "./Preloader";
 
 const ProductPage = () => {
+  const [searchBox, setSearchBox] = useState("");
   const [products, setProducts] = useState([]);
-  const [salesProducts, setSalesProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]); // Store full product list
   const [productAddBtn, setProductAddBtn] = useState(false);
   const [loading, setLoading] = useState(true);
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [rating, setRating] = useState("");
+
+  // Fetch products
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/products");
+        const data = await res.json();
+        setProducts(data); // Set filtered list
+        setAllProducts(data); // Store the full list
+      } catch (err) {
+        alert(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProducts();
+  }, []);
+
+  // Filter products based on search input
+  useEffect(() => {
+    const dataFilter = () => {
+      if (searchBox.trim() === "") {
+        setProducts(allProducts); // Reset to full list when search is empty
+      } else {
+        const filteredProducts = allProducts.filter((product) =>
+          product.name.toLowerCase().includes(searchBox.toLowerCase())
+        );
+        setProducts(filteredProducts);
+      }
+    };
+    dataFilter();
+  }, [searchBox, allProducts]);
 
   const handleProductAddBtnClick = () => {
     setProductAddBtn(true);
@@ -33,27 +66,12 @@ const ProductPage = () => {
       });
       if (newProduct.ok) {
         setProductAddBtn(false);
+        // Optionally refetch products here after adding new product
       }
     } catch (err) {
       alert(err.message);
     }
   };
-
-  // Fetch products
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/products");
-        const data = await res.json();
-        setProducts(data);
-      } catch (err) {
-        alert(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProducts();
-  }, []);
 
   const deleteBtnClick = async (id) => {
     try {
@@ -62,6 +80,7 @@ const ProductPage = () => {
       });
       if (res.ok) {
         setProducts(products.filter((product) => product.id !== id));
+        setAllProducts(allProducts.filter((product) => product.id !== id)); // Update full list
       }
     } catch (err) {
       alert(err.message);
@@ -80,6 +99,7 @@ const ProductPage = () => {
               type="search"
               className="px-4 py-2 w-1/3 bg-gray-200 border border-gray-300 rounded-md focus:ring focus:ring-blue-300 focus:outline-none"
               placeholder="Search products..."
+              onChange={(e) => setSearchBox(e.target.value)}
             />
             <button
               className="bg-blue-600 text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-blue-700 transition-colors"
@@ -189,9 +209,7 @@ const ProductPage = () => {
                 {products.map((product, index) => (
                   <tr
                     key={product.id}
-                    className={`${
-                      index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                    }`}
+                    className={`${index % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
                   >
                     <td className="p-4 text-sm text-gray-700">{index + 1}</td>
                     <td className="p-4 text-sm text-gray-900 font-semibold">

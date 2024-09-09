@@ -11,6 +11,7 @@ const SalePage = () => {
   const [products, setProducts] = useState([]);
   const [customerName, setCustomerName] = useState("");
   const [quantities, setQuantities] = useState({}); // Track quantities per product
+  const [searchBox, setSearchBox] = useState(""); // Search input for sales
 
   // Increment quantity for specific product
   const handleQuantityIncrement = (productId) => {
@@ -59,6 +60,11 @@ const SalePage = () => {
     fetchSaleProducts();
   }, []);
 
+  // Filter sale products based on search input
+  const filteredSaleProducts = saleProducts.filter((sale) =>
+    sale.customerName.toLowerCase().includes(searchBox.toLowerCase())
+  );
+
   // Submit sale details
   const handleSubmitSale = async () => {
     const selectedProducts = Object.entries(quantities)
@@ -97,6 +103,29 @@ const SalePage = () => {
     }
   };
 
+  const handleClickCreateVoucher = async (id) => {
+    const currentVoucherCreateCustomer = saleProducts.find((product) => product.id === id);
+    try {
+      const res = await fetch("http://localhost:3000/voucher", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          customerName: currentVoucherCreateCustomer.customerName,
+          address: currentVoucherCreateCustomer.address,
+          products: currentVoucherCreateCustomer.products,
+          totalNet: currentVoucherCreateCustomer.totalNet,
+        }),
+      });
+      if (res.ok) {
+        alert("Voucher created successfully");
+      }
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+
   return (
     <>
       <BreadCrumb title={"Sales"} />
@@ -104,8 +133,9 @@ const SalePage = () => {
         <div className="flex justify-between items-center px-10 mb-5">
           <input
             type="search"
-            className="px-3 py-2 bg-gray-200 border-[1px] border-gray-400 outline-none focus:border-gray-600 rounded-lg w-80"
-            placeholder="Search..."
+            className="px-4 py-2 w-1/3 bg-gray-200 border border-gray-300 rounded-md focus:ring focus:ring-blue-300 focus:outline-none"
+            placeholder="Search sales..."
+            onChange={(e) => setSearchBox(e.target.value)}
           />
           <button
             className="flex gap-1 bg-green-500 px-3 py-2 rounded-lg text-white items-center hover:bg-green-600"
@@ -215,16 +245,25 @@ const SalePage = () => {
                 <th className="text-left font-bold p-3">Customer Name</th>
                 <th className="text-left font-bold p-3">Address</th>
                 <th className="text-right font-bold p-3">Total Net</th>
+                <th className="text-right font-bold p-3">Voucher</th>
                 <th className="text-right font-bold p-3">Details</th>
               </tr>
             </thead>
             <tbody>
-              {saleProducts.map((sale, index) => (
+              {filteredSaleProducts.map((sale, index) => (
                 <tr key={index} className="border-b">
                   <td className="p-3">{index + 1}</td>
                   <td className="p-3">{sale.customerName}</td>
                   <td className="p-3">{sale.address}</td>
                   <td className="text-right p-3">${sale.totalNet}</td>
+                  <td className="text-right p-3">
+                    <button
+                      onClick={() => handleClickCreateVoucher(sale.id)}
+                      className="text-blue-500 hover:underline"
+                    >
+                      Create Voucher
+                    </button>
+                  </td>
                   <td className="text-right p-3">
                     <Link to={`/sales/${sale.id}`} className="text-blue-500 hover:underline">
                       View Details

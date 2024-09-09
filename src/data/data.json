@@ -8,18 +8,18 @@
       "rating": "4.0"
     },
     {
-      "id": "4d97",
-      "name": "MacBook",
-      "price": "2000",
-      "category": "electronic",
-      "rating": "5.0"
-    },
-    {
       "id": "8180",
       "name": "Infinix note 30 pro",
       "price": "200",
       "category": "electronic",
       "rating": "4.0"
+    },
+    {
+      "id": "cce4",
+      "name": "iPhone 15 promax",
+      "price": "2000",
+      "category": "electronic",
+      "rating": "5.0"
     }
   ],
   "sales": [
@@ -54,6 +54,136 @@
         }
       ],
       "totalNet": 2100
+    },
+    {
+      "id": "11be",
+      "customerName": "Hlyan Min Aung",
+      "address": "maesot",
+      "products": [
+        {
+          "id": "8180",
+          "name": "Infinix note 30 pro",
+          "price": "200",
+          "category": "electronic",
+          "rating": "4.0",
+          "quantity": 1
+        },
+        {
+          "id": "cce4",
+          "name": "iPhone 15 promax",
+          "price": "2000",
+          "category": "electronic",
+          "rating": "5.0",
+          "quantity": 1
+        }
+      ],
+      "totalNet": 2200
+    },
+    {
+      "id": "c435",
+      "customerName": "Htet Wai Sheim",
+      "address": "maesot",
+      "products": [
+        {
+          "id": "8180",
+          "name": "Infinix note 30 pro",
+          "price": "200",
+          "category": "electronic",
+          "rating": "4.0",
+          "quantity": 2
+        },
+        {
+          "id": "cce4",
+          "name": "iPhone 15 promax",
+          "price": "2000",
+          "category": "electronic",
+          "rating": "5.0",
+          "quantity": 1
+        }
+      ],
+      "totalNet": 2400
+    }
+  ],
+  "voucher": [
+    {
+      "id": "9d19",
+      "customerName": "Min Zar Ni Htut",
+      "address": "maesot",
+      "products": [
+        {
+          "id": "69ed",
+          "name": "Redmi 10A",
+          "price": "450",
+          "category": "android",
+          "rating": "4.5",
+          "quantity": 2
+        },
+        {
+          "id": "0eb9",
+          "name": "Redmi 9A",
+          "price": "200",
+          "category": "android",
+          "rating": "4.0",
+          "quantity": 2
+        },
+        {
+          "id": "16eb",
+          "name": "Macbook pro",
+          "price": "800",
+          "category": "laptop",
+          "rating": "5",
+          "quantity": 1
+        }
+      ],
+      "totalNet": 2100
+    },
+    {
+      "id": "8ffb",
+      "customerName": "Hlyan Min Aung",
+      "address": "maesot",
+      "products": [
+        {
+          "id": "8180",
+          "name": "Infinix note 30 pro",
+          "price": "200",
+          "category": "electronic",
+          "rating": "4.0",
+          "quantity": 1
+        },
+        {
+          "id": "cce4",
+          "name": "iPhone 15 promax",
+          "price": "2000",
+          "category": "electronic",
+          "rating": "5.0",
+          "quantity": 1
+        }
+      ],
+      "totalNet": 2200
+    },
+    {
+      "id": "afa2",
+      "customerName": "Htet Wai Sheim",
+      "address": "maesot",
+      "products": [
+        {
+          "id": "8180",
+          "name": "Infinix note 30 pro",
+          "price": "200",
+          "category": "electronic",
+          "rating": "4.0",
+          "quantity": 2
+        },
+        {
+          "id": "cce4",
+          "name": "iPhone 15 promax",
+          "price": "2000",
+          "category": "electronic",
+          "rating": "5.0",
+          "quantity": 1
+        }
+      ],
+      "totalNet": 2400
     }
   ]
 }
