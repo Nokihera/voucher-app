@@ -5,6 +5,7 @@ import SalePage from "../components/SalePage";
 import ProductPage from "../components/ProductPage";
 import NotFound from "../components/NotFound";
 import VoucherPage from "../components/VoucherPage";
+import SaleDetail from "../components/SaleDetail";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         path: "/voucher",
         element: <VoucherPage />,
       },
+      {
+        path: "/sales/:id",
+        element: <SaleDetail/>
+      }
     ],
   },
   {

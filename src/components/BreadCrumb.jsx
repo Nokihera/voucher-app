@@ -9,7 +9,7 @@ const BreadCrumb = ({ title }) => {
       <IoHome className="text-gray-700 font-bold" /> Home 
       </Link>
       <span>/</span>
-       <span className="text-gray-500 font-semibold">{title}</span>
+       <Link to={"#"} className="text-gray-500 font-semibold">{title}</Link>
     </div>
   );
 };
