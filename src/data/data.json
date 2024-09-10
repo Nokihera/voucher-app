@@ -20,6 +20,13 @@
       "price": "2000",
       "category": "electronic",
       "rating": "5.0"
+    },
+    {
+      "id": "e744",
+      "name": "MacBook",
+      "price": "1000",
+      "category": "electronic",
+      "rating": "5.0"
     }
   ],
   "sales": [
@@ -102,6 +109,22 @@
         }
       ],
       "totalNet": 2400
+    },
+    {
+      "id": "1d41",
+      "customerName": "Zar Ni",
+      "address": "maesot",
+      "products": [
+        {
+          "id": "e744",
+          "name": "MacBook",
+          "price": "1000",
+          "category": "electronic",
+          "rating": "5.0",
+          "quantity": 1
+        }
+      ],
+      "totalNet": 1000
     }
   ],
   "voucher": [
@@ -184,6 +207,22 @@
         }
       ],
       "totalNet": 2400
+    },
+    {
+      "id": "d2f7",
+      "customerName": "Zar Ni",
+      "address": "maesot",
+      "products": [
+        {
+          "id": "e744",
+          "name": "MacBook",
+          "price": "1000",
+          "category": "electronic",
+          "rating": "5.0",
+          "quantity": 1
+        }
+      ],
+      "totalNet": 1000
     }
   ]
 }

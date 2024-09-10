@@ -59,6 +59,9 @@ const VoucherPage = () => {
           <table className="min-w-full table-auto bg-white shadow-md rounded-lg overflow-hidden">
             <thead>
               <tr className="bg-gray-200 text-gray-600 text-left">
+              <th className="px-6 py-3 text-sm font-semibold uppercase">
+                  #
+                </th>
                 <th className="px-6 py-3 text-sm font-semibold uppercase">
                   Customer Name
                 </th>
@@ -74,11 +77,12 @@ const VoucherPage = () => {
               </tr>
             </thead>
             <tbody>
-              {voucherCustomerList.map((voucherList) => (
+              {voucherCustomerList.map((voucherList, index) => (
                 <tr
                   key={voucherList.id}
                   className="border-b hover:bg-gray-100 transition-colors"
                 >
+                  <td className="px-6 py-4">{index + 1}</td>
                   <td className="px-6 py-4">{voucherList.customerName}</td>
                   <td className="px-6 py-4">{voucherList.address}</td>
                   <td className="px-6 py-4 text-right">
